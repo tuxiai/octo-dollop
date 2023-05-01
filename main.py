@@ -1,2 +1,5 @@
+import commands
+import rooms
+
 #Beginning
-print("Another day, another shift. You should [talk] to your boss.")
+inp = input("Another day, another shift. You should [talk] to your boss.")
