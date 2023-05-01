@@ -1,4 +1,3 @@
-import commands
 import rooms
 
 ####################
@@ -24,7 +23,7 @@ Commands:
 "l" or "load" to load
 
 Movement:
-"door [number]" to enter that door
+"door" to enter that a room
 "leave" to leave the room you're in
 	(leaving a room will take you back to the cafe)
 
@@ -34,8 +33,8 @@ P.S. Press enter to advance text!
 
 #movement
 	#door x
-	#x = slice(:-1)?
-def door(x):
+def door:
+	x = input("Which door number?\n")
 	if x not in range(1,5):
 		print("That door doesn't exist.")
 	else:
@@ -54,10 +53,19 @@ def inv():
 	print(inventory)
 
 #talk
+	#check character list + progress
+
 #check [for items]
+	#check + display item list but with words
+
 #grab
+	#check + alter item list
+
 #use
+	#check + alter inventory
+
 #save
+
 #load
 
 ####################
