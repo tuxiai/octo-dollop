@@ -1,6 +1,7 @@
 import commands
 import rooms
 
+####################
 #init variables
 location = '0'
 inventory = []
@@ -58,8 +59,8 @@ def inv():
 #use
 #save
 #load
-####################
 
+####################
 #Beginning
 while inp not in ["talk","t"]:
 	inp = input("Another day, another shift. You should [talk] to your boss.\n")
@@ -74,12 +75,14 @@ while inp not in ["c", "check"]:
 	if inp in ["c", "check"]:
 		print(f'''The cafe you work at. It's cozy here.
 You find a strange paper. It reads:''')
-		commands.cmds()
+		cmds()
 		inp = input("You also see a cookie on the counter.\n")
 		break
 
+####################
 #game start!
 
+####################
 #End
 if goal:
 	input('''"Success! You've obtained []!"
