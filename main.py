@@ -2,10 +2,63 @@ import commands
 import rooms
 
 #init variables
-location = "a"
+location = '0'
 inventory = []
 inp = ''
 goal = False
+
+####################
+#commands
+#help
+def cmds():
+	print('''=====
+Commands:
+"h" or "help" for a list of commands
+"i" or "inventory" to see your items
+"t" or "talk" to talk to characters
+"c" or "check" to check a room for items
+"g" or "grab" to take an item
+"u" or "use" to use an item
+"s" or "save" to save
+"l" or "load" to load
+
+Movement:
+"door [number]" to enter that door
+"leave" to leave the room you're in
+	(leaving a room will take you back to the cafe)
+
+P.S. Press enter to advance text!
+=====
+''')
+
+#movement
+	#door x
+	#x = slice(:-1)?
+def door(x):
+	if x not in range(1,5):
+		print("That door doesn't exist.")
+	else:
+		location = x
+
+	#leave
+def leave():
+	if location == 0:
+		print("You're still on shift. You can't leave.")
+	else:
+		location = 0
+		print("You're back in the cafe.")
+
+#inventory
+def inv():
+	print(inventory)
+
+#talk
+#check [for items]
+#grab
+#use
+#save
+#load
+####################
 
 #Beginning
 while inp not in ["talk","t"]:
