@@ -16,10 +16,16 @@ while inp not in ["talk","t"]:
 They hand you a note that you can't read.
 "You can probably find it through one of these doors."''')
 		break
-
-#game start!
 while inp not in ["c", "check"]:
 	inp = input("Don't forget to [check] for anything you might need.\n")
+	if inp in ["c", "check"]:
+		print(f'''The cafe you work at. It's cozy here.
+You find a strange paper. It reads:''')
+		commands.cmds()
+		inp = input("You also see a cookie on the counter.\n")
+		break
+
+#game start!
 
 #End
 if goal:

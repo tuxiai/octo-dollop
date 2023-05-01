@@ -1,6 +1,7 @@
 #help
-def help():
-	print('''Commands:
+def cmds():
+	print('''=====
+Commands:
 "h" or "help" for a list of commands
 "i" or "inventory" to see your items
 "t" or "talk" to talk to characters
@@ -16,10 +17,11 @@ Movement:
 	(leaving a room will take you back to the cafe)
 
 P.S. Press enter to advance text!
+=====
 ''')
 
 #movement
-	#door
+	#door x
 	#leave
 #inventory
 #talk
