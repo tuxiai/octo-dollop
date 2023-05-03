@@ -23,7 +23,7 @@ Commands:
 "l" or "load" to load
 
 Movement:
-"door" to enter that a room
+"door" to enter that room
 "leave" to leave the room you're in
 	(leaving a room will take you back to the cafe)
 
@@ -33,7 +33,7 @@ P.S. Press enter to advance text!
 
 #movement
 	#door x
-def door:
+def door():
 	x = input("Which door number?\n")
 	if x not in range(1,5):
 		print("That door doesn't exist.")
@@ -57,6 +57,8 @@ def inv():
 
 #check [for items]
 	#check + display item list but with words
+def check():
+	print("hi lol")
 
 #grab
 	#check + alter item list
@@ -89,6 +91,24 @@ You find a strange paper. It reads:''')
 
 ####################
 #game start!
+####################
+#controls
+#"h" or "help" for a list of commands
+#"i" or "inventory" to see your items
+#"t" or "talk" to talk to characters
+#"c" or "check" to check a room for items
+if inp in ["check","c"]:
+	check()
+#"g" or "grab" to take an item
+#"u" or "use" to use an item
+#"s" or "save" to save
+#"l" or "load" to load
+#"door" to enter that room
+#"leave" to leave the room you're in
+#P.S. Press enter to advance text!
+
+####################
+
 
 ####################
 #End
