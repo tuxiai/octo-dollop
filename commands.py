@@ -15,6 +15,7 @@ Commands:
 "u" or "use" to use an item
 "s" or "save" to save
 "l" or "load" to load
+"q" or "quit" to quit
 
 Movement:
 "door" to enter that room
