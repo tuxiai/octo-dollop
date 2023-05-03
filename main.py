@@ -6,11 +6,12 @@ location = '0'
 inventory = []
 inp = ''
 goal = False
+cmds = ['h','help','i','inventory','t','talk','c','check','g','grab','u','use','s','save','l','load','door','leave']
 
 ####################
 #commands
 #help
-def cmds():
+def cmdlist():
 	print('''=====
 Commands:
 "h" or "help" for a list of commands
@@ -53,22 +54,33 @@ def inv():
 	print(inventory)
 
 #talk
+def talk():
+	pass
 	#check character list + progress
 
 #check [for items]
 	#check + display item list but with words
 def check():
-	print("hi lol")
+	if location == 0:
+		print(f"{rooms.Cafe()}\n")
 
 #grab
+def grab():
+	pass
 	#check + alter item list
 
 #use
+def use():
+	pass
 	#check + alter inventory
 
 #save
+def save():
+	pass
 
 #load
+def load():
+	pass
 
 ####################
 #Beginning
@@ -85,27 +97,46 @@ while inp not in ["c", "check"]:
 	if inp in ["c", "check"]:
 		print(f'''The cafe you work at. It's cozy here.
 You find a strange paper. It reads:''')
-		cmds()
+		cmdlist()
 		inp = input("You also see a cookie on the counter.\n")
 		break
 
 ####################
 #game start!
 ####################
-#controls
-#"h" or "help" for a list of commands
-#"i" or "inventory" to see your items
-#"t" or "talk" to talk to characters
-#"c" or "check" to check a room for items
-if inp in ["check","c"]:
-	check()
-#"g" or "grab" to take an item
-#"u" or "use" to use an item
-#"s" or "save" to save
-#"l" or "load" to load
-#"door" to enter that room
-#"leave" to leave the room you're in
-#P.S. Press enter to advance text!
+#command loop
+while not goal:
+	#controls
+	#"h" or "help" for a list of commands
+	if inp in ["help","h"]:
+		cmdlist()
+	#"i" or "inventory" to see your items
+	elif inp in ["inventory","i"]:
+			inv()
+	#"t" or "talk" to talk to characters
+	elif inp in ["talk","t"]:
+		talk()
+	#"c" or "check" to check a room for items
+	elif inp in ["check","c"]:
+		check()
+	#"g" or "grab" to take an item
+	elif inp in ["grab","g"]:
+		grab()
+	#"u" or "use" to use an item
+	elif inp in ["use","u"]:
+		use()
+	#"s" or "save" to save
+	elif inp in ["save","s"]:
+		save()
+	#"l" or "load" to load
+	elif inp in ["load","l"]:
+		load()
+	#"door" to enter that room
+	elif inp in ["door","d"]:
+			door()
+	#"leave" to leave the room you're in
+	elif inp in ["leave","l"]:
+		leave()
 
 ####################
 
