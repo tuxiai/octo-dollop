@@ -1,86 +1,12 @@
 import rooms
+import commands
 
 ####################
 #init variables
-location = '0'
 inventory = []
 inp = ''
 goal = False
 cmds = ['h','help','i','inventory','t','talk','c','check','g','grab','u','use','s','save','l','load','door','leave']
-
-####################
-#commands
-#help
-def cmdlist():
-	print('''=====
-Commands:
-"h" or "help" for a list of commands
-"i" or "inventory" to see your items
-"t" or "talk" to talk to characters
-"c" or "check" to check a room for items
-"g" or "grab" to take an item
-"u" or "use" to use an item
-"s" or "save" to save
-"l" or "load" to load
-
-Movement:
-"door" to enter that room
-"leave" to leave the room you're in
-	(leaving a room will take you back to the cafe)
-
-P.S. Press enter to advance text!
-=====
-''')
-
-#movement
-	#door x
-def door():
-	x = input("Which door number?\n")
-	if x not in range(1,5):
-		print("That door doesn't exist.")
-	else:
-		location = x
-
-	#leave
-def leave():
-	if location == 0:
-		print("You're still on shift. You can't leave.")
-	else:
-		location = 0
-		print("You're back in the cafe.")
-
-#inventory
-def inv():
-	print(inventory)
-
-#talk
-def talk():
-	pass
-	#check character list + progress
-
-#check [for items]
-	#check + display item list but with words
-def check():
-	if location == 0:
-		print(f"{rooms.Cafe()}\n")
-
-#grab
-def grab():
-	pass
-	#check + alter item list
-
-#use
-def use():
-	pass
-	#check + alter inventory
-
-#save
-def save():
-	pass
-
-#load
-def load():
-	pass
 
 ####################
 #Beginning
@@ -97,49 +23,47 @@ while inp not in ["c", "check"]:
 	if inp in ["c", "check"]:
 		print(f'''The cafe you work at. It's cozy here.
 You find a strange paper. It reads:''')
-		cmdlist()
+		commands.cmdlist()
 		inp = input("You also see a cookie on the counter.\n")
 		break
 
-####################
-#game start!
 ####################
 #command loop
 while not goal:
 	#controls
 	#"h" or "help" for a list of commands
 	if inp in ["help","h"]:
-		cmdlist()
+		commands.cmdlist()
 	#"i" or "inventory" to see your items
 	elif inp in ["inventory","i"]:
-			inv()
+		commands.inv()
 	#"t" or "talk" to talk to characters
 	elif inp in ["talk","t"]:
-		talk()
+		commands.talk()
 	#"c" or "check" to check a room for items
 	elif inp in ["check","c"]:
-		check()
+		commands.check()
 	#"g" or "grab" to take an item
 	elif inp in ["grab","g"]:
-		grab()
+		commands.grab()
 	#"u" or "use" to use an item
 	elif inp in ["use","u"]:
-		use()
+		commands.use()
 	#"s" or "save" to save
 	elif inp in ["save","s"]:
-		save()
+		commands.save()
 	#"l" or "load" to load
 	elif inp in ["load","l"]:
-		load()
+		commands.load()
 	#"door" to enter that room
 	elif inp in ["door","d"]:
-			door()
+		commands.door()
 	#"leave" to leave the room you're in
 	elif inp in ["leave","l"]:
-		leave()
+		commands.leave()
 
 ####################
-
+#game start!
 
 ####################
 #End
