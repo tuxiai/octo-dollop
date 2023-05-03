@@ -1,22 +1,26 @@
-#these should probs be classes
+#basic room
+class room():
+	def __init__(self):
+		items = []
+		charas = []
+
+	def __str__(self):
+		return ""
 
 #Cafe 0
+class Cafe(room):
+	def __init__(self):
+		items = []
+		charas = []
+
 	#description
-	#item list
-	#character list
+	def __str__(self):
+		return "The cafe you work at. It's cozy here."
+
 #Door 1
-	#description
-	#item list
-	#character list
+
 #Door 2
-	#description
-	#item list
-	#character list
+
 #Door 3
-	#description
-	#item list
-	#character list
+
 #Door 4
-	#description
-	#item list
-	#character list
