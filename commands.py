@@ -57,7 +57,6 @@ def leave():
 	if location == 0:
 		print("You're still on shift. You can't leave.")
 	else:
-		location = 0
 		print("You're back in the cafe.")
 
 #inventory
