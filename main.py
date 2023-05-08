@@ -1,5 +1,6 @@
 import rooms
 import commands
+import dict
 
 ####################
 #init variables

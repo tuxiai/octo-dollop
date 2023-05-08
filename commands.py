@@ -1,4 +1,5 @@
 import rooms
+import dict
 
 #init vals
 location = 0
@@ -73,7 +74,9 @@ def talk():
 	#check + display item list but with words
 def check():
 	if location == 0:
-		print(f"{rooms.Cafe()}\n")
+		print(f"{rooms.Cafe()}")
+		for i in rooms.Cafe().items:
+			print(dict.cdict.get(f"{i}"))
 
 #grab
 def grab():
