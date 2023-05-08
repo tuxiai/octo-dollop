@@ -107,7 +107,7 @@ def grab():
 
 	else:
 		print("There's nothing to grab.")
-	
+
 
 #use
 def use():
