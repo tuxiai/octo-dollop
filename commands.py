@@ -7,15 +7,15 @@ inventory = ["notepad","boss' note"]
 
 #location translation ig
 if location == 0:
-	loca = Cafe()
+	loca = rooms.Cafe()
 elif location == 1:
-	loca = Playground()
+	loca = rooms.Playground()
 elif location == 2:
-	loca = Cafe2()
+	loca = rooms.Cafe2()
 elif location == 3:
-	loca = Dungeon()
+	loca = rooms.Dungeon()
 elif location == 4:
-	loca = Shop()
+	loca = rooms.Shop()
 
 #help
 def cmdlist():
@@ -85,13 +85,13 @@ def talk():
 #check [for items]
 	#check + display item list but with words
 def check():
-	if location == 0:
-		print(f"{rooms.Cafe()}")
-		for i in rooms.Cafe().items:
-			print(dict.cdict.get(f"{i}"))
+	print(f"{loca}")
+	for i in loca.items:
+		print(dict.cdict.get(f"{i}"))
 
 #grab
 def grab():
+	pass
 	#check + alter item list
 	
 
