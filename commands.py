@@ -30,10 +30,11 @@ P.S. Press enter to advance text!
 	#door x
 def door():
 	x = input("Which door number?\n")
-	if x not in range(1,5):
+	if x not in range(0,5):
 		print("That door doesn't exist.")
 	else:
 		location = x
+		print("You enter the door.")
 
 	#leave
 def leave():

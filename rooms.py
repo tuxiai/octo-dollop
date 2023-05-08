@@ -2,8 +2,8 @@
 class room():
 	#item + character list
 	def __init__(self):
-		items = []
-		charas = []
+		self.items = []
+		self.charas = []
 
 	#description
 	def __str__(self):
@@ -12,11 +12,16 @@ class room():
 #Cafe 0
 class Cafe():
 	def __init__(self):
-		items = []
-		charas = []
+		self.items = ["cookie"]
+		self.charas = ["boss"]
+		self.unlocked = 1
 
 	def __str__(self):
-		return "The cafe you work at. It's cozy here."
+		if self.unlocked == 1:
+			x = "You see four doors. 1 seems to be unlocked."
+		else:
+			x = f"You see four doors. {self.unlocked} seem to be unlocked."
+		return f"The cafe you work at. It's cozy here.\n{x}"
 
 #Door 1
 
