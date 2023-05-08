@@ -52,8 +52,22 @@ def inv():
 
 #talk
 def talk():
-	pass
 	#check character list + progress
+	#only cafe has multiple characters
+	if location == 0:
+		print("To who?")
+		for i in rooms.Cafe().charas:
+			print(f"-{i}")
+		inp = input()
+		if inp in rooms.Cafe().charas:
+			print("cool")
+		else:
+			print("That person isn't here.")
+	if location in range(0,4):
+		pass
+	else:
+		print("Nobody's here.")
+
 
 #check [for items]
 	#check + display item list but with words

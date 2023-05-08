@@ -4,6 +4,7 @@ class room():
 	def __init__(self):
 		self.items = []
 		self.charas = []
+		self.talk_counter = 0
 
 	#description
 	def __str__(self):
