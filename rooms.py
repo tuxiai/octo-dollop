@@ -12,11 +12,13 @@ class room():
 
 #Cafe 0
 class Cafe():
+	#item + character list
 	def __init__(self):
 		self.items = ["cookie"]
 		self.charas = ["boss"]
 		self.unlocked = 1
 
+	#description
 	def __str__(self):
 		if self.unlocked == 1:
 			x = "You see four doors. 1 seems to be unlocked."
@@ -25,9 +27,49 @@ class Cafe():
 		return f"The cafe you work at. It's cozy here.\n{x}"
 
 #Door 1
+class Playground():
+	#item + character list
+	def __init__(self):
+		self.items = []
+		self.charas = []
+		self.talk_counter = 0
+
+	#description
+	def __str__(self):
+		return ""
 
 #Door 2
+class Cafe2():
+	#item + character list
+	def __init__(self):
+		self.items = []
+		self.charas = []
+		self.talk_counter = 0
+
+	#description
+	def __str__(self):
+		return ""
 
 #Door 3
+class Dungeon():
+	#item + character list
+	def __init__(self):
+		self.items = []
+		self.charas = []
+		self.talk_counter = 0
+
+	#description
+	def __str__(self):
+		return ""
 
 #Door 4
+class Shop():
+	#item + character list
+	def __init__(self):
+		self.items = []
+		self.charas = []
+		self.talk_counter = 0
+
+	#description
+	def __str__(self):
+		return ""

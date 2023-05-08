@@ -5,6 +5,12 @@ import dict
 location = 0
 inventory = ["notepad","boss' note"]
 
+#location translation ig
+if location == 0:
+	loca = Cafe()
+elif location == 1:
+	loca = 
+
 #help
 def cmdlist():
 	print('''=====
@@ -80,8 +86,8 @@ def check():
 
 #grab
 def grab():
-	pass
 	#check + alter item list
+	
 
 #use
 def use():
