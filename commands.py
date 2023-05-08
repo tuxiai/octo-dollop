@@ -9,7 +9,13 @@ inventory = ["notepad","boss' note"]
 if location == 0:
 	loca = Cafe()
 elif location == 1:
-	loca = 
+	loca = Playground()
+elif location == 2:
+	loca = Cafe2()
+elif location == 3:
+	loca = Dungeon()
+elif location == 4:
+	loca = Shop()
 
 #help
 def cmdlist():
