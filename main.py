@@ -7,7 +7,7 @@ import dict
 inp = ''
 goal = False
 #!!REMOVE 'x' IN FINAL!!
-cmds = ["x","quit","q","help","h","inventory","i","talk","t","check","c","grab","g","use","u","save","s","load","l","door","d","leave","l"]
+cmds = ["x","quit","q","help","h","inventory","i","talk","t","check","c","grab","g","use","u","save","s","load","l","door","leave"]
 
 ####################
 #Beginning
@@ -68,11 +68,11 @@ while inp not in ['q','quit'] and not goal:
 		commands.load()
 		inp = ''
 	#"door" to enter that room
-	elif inp in ["door","d"]:
+	elif inp in ["door"]:
 		commands.door()
 		inp = ''
 	#"leave" to leave the room you're in
-	elif inp in ["leave","l"]:
+	elif inp in ["leave"]:
 		commands.leave()
 		inp = ''
 #!!FOR TESTING!!

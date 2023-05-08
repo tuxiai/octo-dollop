@@ -43,9 +43,11 @@ P.S. Press enter to advance text!
 #movement
 	#door x
 def door():
-	x = input("Which door number?\n")
+	x = int(input("Which door number?\n"))
 	if x not in range(0,5):
 		print("That door doesn't exist.")
+	elif x > rooms.Cafe().unlocked:
+		print("That door is locked.")
 	else:
 		location = x
 		print("You enter the door.")
