@@ -7,7 +7,7 @@ inventory = []
 inp = ''
 goal = False
 #!!REMOVE 'x' IN FINAL!!
-cmds = ["x","help","h","inventory","i","talk","t","check","c","grab","g","use","u","save","s","load","l","door","d","leave","l"]
+cmds = ["x","quit","q","help","h","inventory","i","talk","t","check","c","grab","g","use","u","save","s","load","l","door","d","leave","l"]
 
 ####################
 #Beginning
