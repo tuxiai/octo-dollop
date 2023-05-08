@@ -3,7 +3,6 @@ import commands
 
 ####################
 #init variables
-inventory = []
 inp = ''
 goal = False
 #!!REMOVE 'x' IN FINAL!!

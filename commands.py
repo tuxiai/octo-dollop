@@ -1,7 +1,8 @@
 import rooms
 
-#location
+#init vals
 location = 0
+inventory = ["notepad","boss' note"]
 
 #help
 def cmdlist():
@@ -46,7 +47,8 @@ def leave():
 
 #inventory
 def inv():
-	print(inventory)
+	for i in inventory:
+		print(i)
 
 #talk
 def talk():
