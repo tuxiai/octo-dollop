@@ -4,6 +4,6 @@ cdict = {
 	"cookie":"You also see a cookie on the counter."}
 
 #displays when item is grabbed
-ddict = {
+gdict = {
 	#cafe
 	"cookie":"A delicious treat!"}

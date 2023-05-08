@@ -61,7 +61,7 @@ def leave():
 #inventory
 def inv():
 	for i in inventory:
-		print(i)
+		print(f"- {i}")
 
 #talk
 def talk():
@@ -91,8 +91,22 @@ def check():
 
 #grab
 def grab():
-	pass
 	#check + alter item list
+	if loca.items != []:
+		#grab the item
+		x = loca.items[0]
+		#add to inv
+		inventory.append(x)
+		#remove from room
+		loca.items.remove(x)
+
+		print(dict.gdict.get(f"{x}"))
+		print(f"Obtained {x}!")
+		print("Your current inventory:")
+		inv()
+
+	else:
+		print("There's nothing to grab.")
 	
 
 #use
