@@ -69,10 +69,10 @@ def talk():
 	#only cafe has multiple characters
 	if location == 0:
 		print("To who?")
-		for i in rooms.Cafe().charas:
+		for i in loca.charas:
 			print(f"-{i}")
 		inp = input()
-		if inp in rooms.Cafe().charas:
+		if inp in loca.charas:
 			print("cool")
 		else:
 			print("That person isn't here.")
