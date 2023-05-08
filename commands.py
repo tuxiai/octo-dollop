@@ -1,7 +1,21 @@
 import rooms
+import dict
 
-#location
+#init vals
 location = 0
+inventory = ["notepad","boss' note"]
+
+#location translation ig
+if location == 0:
+	loca = rooms.Cafe()
+elif location == 1:
+	loca = rooms.Playground()
+elif location == 2:
+	loca = rooms.Cafe2()
+elif location == 3:
+	loca = rooms.Dungeon()
+elif location == 4:
+	loca = rooms.Shop()
 
 #help
 def cmdlist():
@@ -30,10 +44,11 @@ P.S. Press enter to advance text!
 	#door x
 def door():
 	x = input("Which door number?\n")
-	if x not in range(1,5):
+	if x not in range(0,5):
 		print("That door doesn't exist.")
 	else:
 		location = x
+		print("You enter the door.")
 
 	#leave
 def leave():
@@ -45,23 +60,54 @@ def leave():
 
 #inventory
 def inv():
-	print(inventory)
+	for i in inventory:
+		print(f"- {i}")
 
 #talk
 def talk():
-	pass
 	#check character list + progress
+	#only cafe has multiple characters
+	if location == 0:
+		print("To who?")
+		for i in loca.charas:
+			print(f"-{i}")
+		inp = input()
+		if inp in loca.charas:
+			print("cool")
+		else:
+			print("That person isn't here.")
+	if location in range(0,4):
+		pass
+	else:
+		print("Nobody's here.")
+
 
 #check [for items]
 	#check + display item list but with words
 def check():
-	if location == 0:
-		print(f"{rooms.Cafe()}\n")
+	print(f"{loca}")
+	for i in loca.items:
+		print(dict.cdict.get(f"{i}"))
 
 #grab
 def grab():
-	pass
 	#check + alter item list
+	if loca.items != []:
+		#grab the item
+		x = loca.items[0]
+		#add to inv
+		inventory.append(x)
+		#remove from room
+		loca.items.remove(x)
+
+		print(dict.gdict.get(f"{x}"))
+		print(f"Obtained {x}!")
+		print("Your current inventory:")
+		inv()
+
+	else:
+		print("There's nothing to grab.")
+
 
 #use
 def use():

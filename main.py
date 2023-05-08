@@ -1,9 +1,9 @@
 import rooms
 import commands
+import dict
 
 ####################
 #init variables
-inventory = []
 inp = ''
 goal = False
 #!!REMOVE 'x' IN FINAL!!
