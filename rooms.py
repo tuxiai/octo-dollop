@@ -66,13 +66,18 @@ class Playground():
 class Stargazers():
 	#item + character list
 	def __init__(self):
-		self.items = []
-		self.charas = []
-		self.quest_status = 0
+		self.items = ["goose"]
+		self.charas = ["oli"]
+		self.quest_status = -1
 
 	#description
 	def __str__(self):
-		return ""
+		a = "A nice little cafe. It's pretty sunny."
+
+		
+
+
+		return f"{x}"
 
 #Door 3
 class Dungeon():
