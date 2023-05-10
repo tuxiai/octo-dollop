@@ -29,7 +29,7 @@ Playground = room(["pocket sand"],["scrib"],"A cute little playground.")
 Stargazers = room(["goose"],["oli"],"A nice little cafe. It's pretty sunny.")
 
 #door 3
-Dungeon = room()
+Dungeon = room(["moss"],["skel"],"A relatively dark dungeon.")
 
-#door 4
-Shop = room()
+#door 4: might make new class for the trading bit
+Shop = room([],["shopkeep"],"A decently large shop.")
