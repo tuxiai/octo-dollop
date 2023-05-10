@@ -5,7 +5,7 @@ class room():
 		self.items = []
 		self.charas = []
 		#for determining what dialogue to show
-		#0: not started
+		#0: init
 		#1: in progress
 		#2: finished
 		self.quest_status = 0
@@ -40,7 +40,7 @@ class Playground():
 	def __init__(self):
 		self.items = ["pocket sand"]
 		self.charas = ["scrib"]
-		self.quest_status = -1
+		self.quest_status = 0
 
 	#description
 	def __str__(self):
@@ -48,9 +48,9 @@ class Playground():
 		a = "A cute little playground."
 
 		#init
-		if self.quest_status == -1:
+		if self.quest_status == 0:
 			x = f"You're at... a playground? Would the boss' thing really be here?"
-			self.quest_status = 0
+			self.quest_status = 1
 		#scrib left
 		elif self.charas == []:
 			x = f"{a}\nNo one's here."
@@ -66,12 +66,14 @@ class Stargazers():
 	def __init__(self):
 		self.items = ["goose"]
 		self.charas = ["oli"]
-		self.quest_status = -1
+		self.quest_status = 0
 
 	#description
 	def __str__(self):
-		if self.quest_status == -1:
+		if self.quest_status == 0:
 			x = f"...Is this a cafe? Is boss really sending you to a rival business??\nYou're starting to wonder if your boss is sending you on a wild goose chase."
+			self.quest_status = 1
+
 		if self.quest_status in range(3):
 			x = f"A nice little cafe. It's pretty sunny."
 

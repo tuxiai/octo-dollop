@@ -95,16 +95,24 @@ def talk():
 	elif loca.charas != []:
 		#playground
 		if location == 1:
-			print("scrib")
+			if loca.quest_status == 1:
+				print("You ask if the child knows what's on your boss' note.")
+				print("The child seems to pay you no mind, only mumbling to themself.")
+				print(f'"Man, I\'m kinda hungry... But this sandcastle won\'t build itself! I have to stick with it!"')
+			if loca.quest_status == 2:
+				print("You try to ask the child about the paper, but they're too focused on their sandcastle to respond.")
 		#stargazers
 		elif location == 2:
-			print("oli")
+			if loca.quest_status == 1:
+			if loca.quest_status == 2:
 		#dungeon
 		elif location == 3:
-			print("skellie")
+			if loca.quest_status == 1:
+			if loca.quest_status == 2:
 		#shop
 		elif location == 4:
-			print("shopkeep")
+			if loca.quest_status == 1:
+			if loca.quest_status == 2:
 
 
 	else:
