@@ -55,16 +55,16 @@ class Playground():
 		if self.quest_status == 0:
 			x = f"You're at... a playground? Would the boss' thing really be here?"
 			self.quest_status = 1
-		#scrib left
-		elif self.charas == []:
-			x = f"{a}\nNo one's here."
 		#all stages
 		elif self.quest_status in range(3):
 			x = f"{a}\nIt seems pretty deserted, save for that kid."
+		#scrib left
+		elif self.charas == []:
+			x = f"{a}\nNo one's here."
 
 		return f"{x}"
 	
-	def stagefin(self): 
+	def stagefin(self):
 		global unlocked
 		global cafecharas
 		self.quest_status = 2
