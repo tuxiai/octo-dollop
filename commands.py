@@ -114,7 +114,16 @@ def talk():
 #check [for items]
 	#check + display item list but with words
 def check():
+	global location
 	print(f"{loca}")
+
+	if location == 0:
+		for i in rooms.Cafe().charas:
+			print(dict.cafechara.get(f"{i}"))
+	elif location != 0:
+		for i in loca.charas:
+			print(dict.chara.get(f"{i}"))
+
 	for i in loca.items:
 		print(dict.cdict.get(f"{i}"))
 

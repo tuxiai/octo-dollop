@@ -20,3 +20,14 @@ gdict = {
 	"goose":"Did you seriously stuff a whole goose into your pocket?",
 	"soda":"Looks cherry flavored."
 	}
+
+chara = {
+	"boss":"Your boss is doing.. boss things.",
+	"scrib":"There's a child in purple playing in the sandbox."
+	}
+
+cafechara = {
+	"boss":"Your boss is doing.. boss things.",
+	"scrib":"You see the kid from the playground eating at one of the tables near a window.",
+	"oli":"The guy from the other cafe is here too. He's talking to your boss."
+	}
