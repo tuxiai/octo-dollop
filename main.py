@@ -6,8 +6,7 @@ import dict
 #init variables
 inp = ''
 goal = False
-#!!REMOVE 'x' IN FINAL!!
-cmds = ["x","quit","q","help","h","inventory","i","talk","t","check","c","grab","g","use","u","save","s","load","l","door","leave"]
+cmds = ["quit","q","help","h","inventory","i","talk","t","check","c","grab","g","use","u","save","s","load","l","door","leave"]
 
 ####################
 #Beginning
@@ -75,9 +74,6 @@ while inp not in ['q','quit'] and not goal:
 	elif inp in ["leave"]:
 		commands.leave()
 		inp = ''
-#!!FOR TESTING!!
-	elif inp == 'x':
-		goal = True
 
 ####################
 #game start!
