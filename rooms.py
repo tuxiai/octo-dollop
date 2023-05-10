@@ -5,7 +5,7 @@ unlocked = 1
 #basic room
 class room():
 	#item + character list
-	def __init__(self,items = [],charas = [],desc):
+	def __init__(self,items = [],charas = [],desc = ""):
 		self.items = items
 		self.charas = charas
 		self.desc = desc
