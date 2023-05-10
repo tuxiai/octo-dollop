@@ -1,23 +1,8 @@
 #*sigh*
 cafecharas = ["boss"]
 unlocked = 1
-
-#Cafe 0
-class Cafe():
-	#item + character list
-	def __init__(self):
-		self.items = ["cookie"]
-		self.charas = ["boss"]
-
-	#description
-	def __str__(self):
-		if unlocked == 1:
-			x = "You see four doors. 1 seems to be unlocked."
-		elif unlocked in range (1,5):
-			x = f"You see four doors. {unlocked} seem to be unlocked."
-		return f"The cafe you work at. It's cozy here.\n{x}"
 		
-#basic room template
+#basic room
 class room():
 	#item + character list
 	def __init__(self,items = [],charas = [],desc):
@@ -33,6 +18,9 @@ class room():
 	#description
 	def __str__(self):
 		return self.desc
+
+#cafe 0
+Cafe = room(["cookie"],["boss"],"The cafe you work at. It's cozy here.")
 
 #door 1
 Playground = room(["pocket sand"],["scrib"],"A cute little playground.")

@@ -13,13 +13,13 @@ def locachange():
 	if location == 0:
 		loca = rooms.Cafe()
 	elif location == 1:
-		loca = rooms.Playground()
+		loca = rooms.Playground
 	elif location == 2:
-		loca = rooms.Stargazers()
+		loca = rooms.Stargazers
 	elif location == 3:
-		loca = rooms.Dungeon()
+		loca = rooms.Dungeon
 	elif location == 4:
-		loca = rooms.Shop()
+		loca = rooms.Shop
 
 #help
 def cmdlist():
@@ -96,11 +96,9 @@ def talk():
 		#playground
 		if location == 1:
 			if loca.quest_status == 1:
-				print("You ask if the child knows what's on your boss' note.")
-				print("The child seems to pay you no mind, only mumbling to themself.")
-				print(f'"Man, I\'m kinda hungry... But this sandcastle won\'t build itself! I have to stick with it!"')
+				pass
 			if loca.quest_status == 2:
-				print("You try to ask the child about the paper, but they're too focused on their sandcastle to respond.")
+				pass
 		#stargazers
 		elif location == 2:
 			if loca.quest_status == 1:
@@ -171,19 +169,7 @@ def use():
 		#playground
 		if location == 1:
 			if "cookie" in inventory:
-				print('''You gave the child a cookie. They look at you in wonder.
-"Whoa, thanks!"
-"Wait, I didn't pay for this..."
-The child starts patting their pockets.
-"Aha! Here's some money for the cookie!"
-Obtained money.
-The child immediately goes back to making their sandcastle.''')
-				inventory.remove("cookie")
-				inventory.append("money")
-
-				rooms.Playground().stagefin()
-
-
+				pass
 		#stargazers
 		elif location == 2:
 			if "money" in inventory:
