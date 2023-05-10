@@ -64,7 +64,7 @@ class Playground():
 
 		return f"{x}"
 	
-	def stagefin(self):
+	def stagefin(self): 
 		global unlocked
 		global cafecharas
 		self.quest_status = 2
