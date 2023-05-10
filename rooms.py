@@ -38,7 +38,7 @@ class Cafe():
 class Playground():
 	#item + character list
 	def __init__(self):
-		self.items = []
+		self.items = ["pocket sand"]
 		self.charas = ["scrib"]
 		self.quest_status = -1
 
