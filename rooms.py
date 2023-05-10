@@ -46,19 +46,17 @@ class Playground():
 	def __str__(self):
 		#the actual desc
 		a = "A cute little playground."
-		#bc I don't want to retype that lol
-		y = "You see a child in purple playing in the sandbox."
 
 		#init
 		if self.quest_status == -1:
-			x = f"You're at... a playground? Would the boss' thing really be here?\n{y}"
+			x = f"You're at... a playground? Would the boss' thing really be here?"
 			self.quest_status = 0
 		#scrib left
 		elif self.charas == []:
 			x = f"{a}\nNo one's here."
 		#all stages
 		elif self.quest_status in range(-1,3):
-			x = f"{a}\n{y}\nIt seems pretty deserted, save for that kid."
+			x = f"{a}\nIt seems pretty deserted, save for that kid."
 
 		return f"{x}"
 
