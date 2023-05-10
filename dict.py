@@ -17,13 +17,14 @@ gdict = {
 	"pocket sand":"Good to throw into the eyes of your enemies.",
 	"money":"Some crumpled up bills.",
 	#stargazers
-	"goose":"Did you seriously stuff a whole goose into your pocket?",
+	"goose":"You grabbed the goose. It starts honking aggressively, but otherwise does nothing.\nApron guy looks a little awestruck.\n\"Oh, thanks for dealing with that. I didn't know what to do.\"",
 	"soda":"Looks cherry flavored."
 	}
 
 chara = {
 	"boss":"Your boss is doing.. boss things.",
 	"scrib":"There's a child in purple playing in the sandbox."
+	"oli":"You see a guy in a pink apron at the counter."
 	}
 
 cafechara = {

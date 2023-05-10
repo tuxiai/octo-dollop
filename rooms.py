@@ -55,7 +55,7 @@ class Playground():
 		elif self.charas == []:
 			x = f"{a}\nNo one's here."
 		#all stages
-		elif self.quest_status in range(-1,3):
+		elif self.quest_status in range(3):
 			x = f"{a}\nIt seems pretty deserted, save for that kid."
 
 		return f"{x}"
@@ -70,12 +70,13 @@ class Stargazers():
 
 	#description
 	def __str__(self):
-		a = "A nice little cafe. It's pretty sunny."
-		b = "You're starting to wonder if you boss is sending you on a wild goose chase."
-
 		if self.quest_status == -1:
-			x = f"...Is this a cafe? Is boss really sending you to a rival business??\n{b}"
+			x = f"...Is this a cafe? Is boss really sending you to a rival business??\nYou're starting to wonder if your boss is sending you on a wild goose chase."
+		if self.quest_status in range(3):
+			x = f"A nice little cafe. It's pretty sunny."
 
+		if "goose" in self.items:
+			x = x + f"\n...Is that a goose talking to the barista?\nOn second thought, the poor guy actually looks a little distressed at the presence of the goose."
 
 		return f"{x}"
 
