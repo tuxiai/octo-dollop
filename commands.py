@@ -3,19 +3,23 @@ import dict
 
 #init vals
 location = 0
+loca = rooms.Cafe()
 inventory = ["notepad","boss' note"]
 
 #location translation ig
-if location == 0:
-	loca = rooms.Cafe()
-elif location == 1:
-	loca = rooms.Playground()
-elif location == 2:
-	loca = rooms.Cafe2()
-elif location == 3:
-	loca = rooms.Dungeon()
-elif location == 4:
-	loca = rooms.Shop()
+def locachange():
+	global location
+	global loca
+	if location == 0:
+		loca = rooms.Cafe()
+	elif location == 1:
+		loca = rooms.Playground()
+	elif location == 2:
+		loca = rooms.Cafe2()
+	elif location == 3:
+		loca = rooms.Dungeon()
+	elif location == 4:
+		loca = rooms.Shop()
 
 #help
 def cmdlist():
@@ -52,6 +56,8 @@ def door():
 	else:
 		location = x
 		print("You enter the door.")
+		locachange()
+		print(loca)
 
 	#leave
 def leave():
@@ -61,6 +67,7 @@ def leave():
 	else:
 		print("You're back in the cafe.")
 		location = 0
+		locachange()
 
 #inventory
 def inv():
