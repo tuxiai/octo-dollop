@@ -3,7 +3,7 @@ import dict
 
 #init vals
 location = 0
-loca = rooms.Cafe()
+loca = rooms.Cafe
 inventory = ["notepad","boss' note"]
 
 #location translation ig
@@ -11,7 +11,7 @@ def locachange():
 	global location
 	global loca
 	if location == 0:
-		loca = rooms.Cafe()
+		loca = rooms.Cafe
 	elif location == 1:
 		loca = rooms.Playground
 	elif location == 2:
