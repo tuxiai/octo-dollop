@@ -57,7 +57,7 @@ class Playground():
 		elif self.quest_status in range(-1,2):
 			x = f"{a}\n{y}\nIt seems pretty deserted, save for that kid."
 		#quest fin
-		elif self.quest_status = 2:
+		elif self.quest_status == 2:
 			x = f"{a}\nNo one's here."
 
 		return f"{x}"
