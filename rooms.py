@@ -73,8 +73,10 @@ class Stargazers():
 	#description
 	def __str__(self):
 		a = "A nice little cafe. It's pretty sunny."
+		b = "You're starting to wonder if you boss is sending you on a wild goose chase."
 
-		
+		if self.quest_status == -1:
+			x = f"...Is this a cafe? Is boss really sending you to a rival business??\n{b}"
 
 
 		return f"{x}"
