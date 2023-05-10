@@ -18,25 +18,25 @@ class room():
 	def check(self):
 		return
 
+#*sigh*
+cafecharas = ["boss"]
+unlocked = 1
+
+
 #Cafe 0
 class Cafe():
 	#item + character list
 	def __init__(self):
 		self.items = ["cookie"]
 		self.charas = ["boss"]
-		self.unlocked = 1
 
 	#description
 	def __str__(self):
-		if self.unlocked == 1:
+		if unlocked == 1:
 			x = "You see four doors. 1 seems to be unlocked."
-		elif self.unlocked in range (1,5):
-			x = f"You see four doors. {self.unlocked} seem to be unlocked."
+		elif unlocked in range (1,5):
+			x = f"You see four doors. {unlocked} seem to be unlocked."
 		return f"The cafe you work at. It's cozy here.\n{x}"
-
-	def roomfin(self,un,char):
-		self.unlocked = un
-		self.charas.append(char)
 
 #Door 1
 class Playground():
@@ -55,19 +55,22 @@ class Playground():
 		if self.quest_status == 0:
 			x = f"You're at... a playground? Would the boss' thing really be here?"
 			self.quest_status = 1
-		#scrib left
-		elif self.charas == []:
-			x = f"{a}\nNo one's here."
 		#all stages
 		elif self.quest_status in range(3):
 			x = f"{a}\nIt seems pretty deserted, save for that kid."
+		#scrib left
+		elif self.charas == []:
+			x = f"{a}\nNo one's here."
 
 		return f"{x}"
 	
 	def stagefin(self):
+		global unlocked
+		global cafecharas
 		self.quest_status = 2
 		self.charas.remove("scrib")
-		Cafe().roomfin(2,"scrib")
+		cafecharas.append("scrib")
+		unlocked = 2
 
 #Door 2
 class Stargazers():

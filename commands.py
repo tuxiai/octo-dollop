@@ -51,7 +51,7 @@ def door():
 	x = int(input("Which door number?\n"))
 	if x not in range(0,5):
 		print("That door doesn't exist.")
-	elif x > rooms.Cafe().unlocked:
+	elif x > rooms.unlocked:
 		print("That door is locked.")
 	else:
 		location = x
@@ -133,9 +133,9 @@ def check():
 
 	#characters
 	if location == 0:
-		for i in rooms.Cafe().charas:
+		for i in rooms.cafecharas:
 			print(dict.cafechara.get(f"{i}"))
-			
+
 	elif location != 0:
 		for i in loca.charas:
 			print(dict.chara.get(f"{i}"))
