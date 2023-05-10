@@ -31,7 +31,7 @@ You find a strange paper. It reads:''')
 #command loop
 while inp not in ['q','quit'] and not goal:
 	while inp not in cmds:
-		inp = input()
+		inp = input("\n")
 
 	#controls
 	#"h" or "help" for a list of commands

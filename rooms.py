@@ -5,7 +5,7 @@ class room():
 		self.items = []
 		self.charas = []
 		#for determining what dialogue to show
-		#0: not started
+		#0: init
 		#1: in progress
 		#2: finished
 		self.quest_status = 0
@@ -30,9 +30,13 @@ class Cafe():
 	def __str__(self):
 		if self.unlocked == 1:
 			x = "You see four doors. 1 seems to be unlocked."
-		else:
+		elif self.unlocked in range (1,5):
 			x = f"You see four doors. {self.unlocked} seem to be unlocked."
 		return f"The cafe you work at. It's cozy here.\n{x}"
+
+	def roomfin(self,un,char):
+		self.unlocked = un
+		self.charas.append(char)
 
 #Door 1
 class Playground():
@@ -40,7 +44,7 @@ class Playground():
 	def __init__(self):
 		self.items = ["pocket sand"]
 		self.charas = ["scrib"]
-		self.quest_status = -1
+		self.quest_status = 0
 
 	#description
 	def __str__(self):
@@ -48,17 +52,22 @@ class Playground():
 		a = "A cute little playground."
 
 		#init
-		if self.quest_status == -1:
+		if self.quest_status == 0:
 			x = f"You're at... a playground? Would the boss' thing really be here?"
-			self.quest_status = 0
+			self.quest_status = 1
 		#scrib left
 		elif self.charas == []:
 			x = f"{a}\nNo one's here."
 		#all stages
-		elif self.quest_status in range(-1,3):
+		elif self.quest_status in range(3):
 			x = f"{a}\nIt seems pretty deserted, save for that kid."
 
 		return f"{x}"
+	
+	def stagefin(self):
+		self.quest_status = 2
+		self.charas.remove("scrib")
+		Cafe().roomfin(2,"scrib")
 
 #Door 2
 class Stargazers():
@@ -66,16 +75,19 @@ class Stargazers():
 	def __init__(self):
 		self.items = ["goose"]
 		self.charas = ["oli"]
-		self.quest_status = -1
+		self.quest_status = 0
 
 	#description
 	def __str__(self):
-		a = "A nice little cafe. It's pretty sunny."
-		b = "You're starting to wonder if you boss is sending you on a wild goose chase."
+		if self.quest_status == 0:
+			x = f"...Is this a cafe? Is boss really sending you to a rival business??\nYou're starting to wonder if your boss is sending you on a wild goose chase."
+			self.quest_status = 1
 
-		if self.quest_status == -1:
-			x = f"...Is this a cafe? Is boss really sending you to a rival business??\n{b}"
+		if self.quest_status in range(3):
+			x = f"A nice little cafe. It's pretty sunny."
 
+		if "goose" in self.items:
+			x = x + f"\n...Is that a goose talking to the barista?\nOn second thought, the poor guy actually looks a little distressed at the presence of the goose."
 
 		return f"{x}"
 
