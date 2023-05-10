@@ -76,9 +76,6 @@ while inp not in ['q','quit'] and not goal:
 		inp = ''
 
 ####################
-#game start!
-
-####################
 #End
 if goal:
 	input('''"Success! You've obtained []!"
