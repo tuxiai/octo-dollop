@@ -43,6 +43,7 @@ P.S. Press enter to advance text!
 #movement
 	#door x
 def door():
+	global location
 	x = int(input("Which door number?\n"))
 	if x not in range(0,5):
 		print("That door doesn't exist.")
@@ -54,10 +55,12 @@ def door():
 
 	#leave
 def leave():
+	global location
 	if location == 0:
 		print("You're still on shift. You can't leave.")
 	else:
 		print("You're back in the cafe.")
+		location = 0
 
 #inventory
 def inv():
