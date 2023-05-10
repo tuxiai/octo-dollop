@@ -30,9 +30,13 @@ class Cafe():
 	def __str__(self):
 		if self.unlocked == 1:
 			x = "You see four doors. 1 seems to be unlocked."
-		else:
+		elif self.unlocked in range (1,5):
 			x = f"You see four doors. {self.unlocked} seem to be unlocked."
 		return f"The cafe you work at. It's cozy here.\n{x}"
+
+	def roomfin(self,un,char):
+		self.unlocked = un
+		self.charas.append(char)
 
 #Door 1
 class Playground():
@@ -59,6 +63,11 @@ class Playground():
 			x = f"{a}\nIt seems pretty deserted, save for that kid."
 
 		return f"{x}"
+	
+	def stagefin(self):
+		self.quest_status = 2
+		self.charas.remove("scrib")
+		Cafe().roomfin(2,"scrib")
 
 #Door 2
 class Stargazers():

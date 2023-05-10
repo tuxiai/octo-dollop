@@ -104,15 +104,21 @@ def talk():
 		#stargazers
 		elif location == 2:
 			if loca.quest_status == 1:
+				pass
 			if loca.quest_status == 2:
+				pass
 		#dungeon
 		elif location == 3:
 			if loca.quest_status == 1:
+				pass
 			if loca.quest_status == 2:
+				pass
 		#shop
 		elif location == 4:
 			if loca.quest_status == 1:
+				pass
 			if loca.quest_status == 2:
+				pass
 
 
 	else:
@@ -125,13 +131,16 @@ def check():
 	global location
 	print(f"{loca}")
 
+	#characters
 	if location == 0:
 		for i in rooms.Cafe().charas:
 			print(dict.cafechara.get(f"{i}"))
+			
 	elif location != 0:
 		for i in loca.charas:
 			print(dict.chara.get(f"{i}"))
 
+	#items
 	for i in loca.items:
 		print(dict.cdict.get(f"{i}"))
 
@@ -157,12 +166,32 @@ def grab():
 
 #use
 def use():
+	#check + alter inventory
 	if inventory != ["notepad","boss' note"]:
-		pass
+		#playground
+		if location == 1:
+			if "cookie" in inventory:
+				print('''You gave the child a cookie. They look at you in wonder.
+"Whoa, thanks!"
+"Wait, I didn't pay for this..."
+The child starts patting their pockets.
+"Aha! Here's some money for the cookie!"
+Obtained money.
+The child immediately goes back to making their sandcastle.''')
+				inventory.remove("cookie")
+				inventory.append("money")
+
+				rooms.Playground().stagefin()
+
+
+		#stargazers
+		elif location == 2:
+			if "money" in inventory:
+				pass
+
 
 	else:
 		print("You can't use anything.")
-	#check + alter inventory
 
 #save
 def save():
