@@ -38,7 +38,7 @@ class Cafe():
 class Playground():
 	#item + character list
 	def __init__(self):
-		self.items = []
+		self.items = ["pocket sand"]
 		self.charas = ["scrib"]
 		self.quest_status = -1
 
@@ -63,16 +63,23 @@ class Playground():
 		return f"{x}"
 
 #Door 2
-class Cafe2():
+class Stargazers():
 	#item + character list
 	def __init__(self):
-		self.items = []
-		self.charas = []
-		self.quest_status = 0
+		self.items = ["goose"]
+		self.charas = ["oli"]
+		self.quest_status = -1
 
 	#description
 	def __str__(self):
-		return ""
+		a = "A nice little cafe. It's pretty sunny."
+		b = "You're starting to wonder if you boss is sending you on a wild goose chase."
+
+		if self.quest_status == -1:
+			x = f"...Is this a cafe? Is boss really sending you to a rival business??\n{b}"
+
+
+		return f"{x}"
 
 #Door 3
 class Dungeon():

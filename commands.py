@@ -15,7 +15,7 @@ def locachange():
 	elif location == 1:
 		loca = rooms.Playground()
 	elif location == 2:
-		loca = rooms.Cafe2()
+		loca = rooms.Stargazers()
 	elif location == 3:
 		loca = rooms.Dungeon()
 	elif location == 4:
@@ -82,13 +82,31 @@ def talk():
 		print("To who?")
 		for i in loca.charas:
 			print(f"-{i}")
-		inp = input()
-		if inp in loca.charas:
-			print("cool")
+		x = input()
+		if x in loca.charas:
+			if x.lower() == "boss":
+				print("Hiya. Haven't found it yet?")
+				print("Chin up. You'll find it by the end of the day. Probably.")
+
 		else:
 			print("That person isn't here.")
-	if location in range(0,4):
-		pass
+
+	#other rooms
+	elif loca.charas != []:
+		#playground
+		if location == 1:
+			print("scrib")
+		#stargazers
+		elif location == 2:
+			print("oli")
+		#dungeon
+		elif location == 3:
+			print("skellie")
+		#shop
+		elif location == 4:
+			print("shopkeep")
+
+
 	else:
 		print("Nobody's here.")
 
@@ -122,7 +140,11 @@ def grab():
 
 #use
 def use():
-	pass
+	if inventory != ["notepad","boss' note"]:
+		pass
+
+	else:
+		print("You can't use anything.")
 	#check + alter inventory
 
 #save
