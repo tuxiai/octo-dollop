@@ -63,7 +63,7 @@ class Playground():
 		return f"{x}"
 
 #Door 2
-class Cafe2():
+class Stargazers():
 	#item + character list
 	def __init__(self):
 		self.items = []
