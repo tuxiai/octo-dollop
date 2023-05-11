@@ -44,7 +44,7 @@ chara = {
 
 cafechara = {
 	"boss":"Your boss is doing.. boss things.",
-	"scrib":"You see the kid from the playground eating at one of the tables near a window.",
-	"oli":"The guy from the other cafe is here too. He's talking to your boss.",
-	"skel":"The skeleton from the dungeon seems to be drinking... milk?"
+	"purple child":"You see the kid from the playground eating at one of the tables near a window.",
+	"pink barista":"The guy from the other cafe is here too. He's talking to your boss.",
+	"skeleton":"The skeleton from the dungeon seems to be drinking... milk?"
 	}
