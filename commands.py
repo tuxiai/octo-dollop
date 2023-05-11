@@ -336,15 +336,16 @@ Oh, they know each other. Maybe it’s not a rivalry, after all.''')
 
 		#shop
 		elif location == 4:
-			if ["Shovel","Soda","Sword","Moss"] not in inventory:
-				print("No one seems to want anything you have.\nMaybe see if you can find anything else from the other doors.")
-			elif "Shovel" in inventory:
-				print("You trade the plastic shovel you found for a toy truck.")
+			if "Shovel" in inventory:
+				print('''The kid from the playground is here.
+"Hey hey! I'll trade you that shovel for this truck!"
+You trade the plastic shovel you found for a toy truck.''')
 				inventory.remove("Shovel")
 				inventory.append("Truck")
 			elif "Soda" in inventory:
 				if "Truck" in inventory:
-					print("You trade the cherry soda and toy truck for a strange mirror.")
+					print('''"Yo! That truck and soda look pretty good. Care to trade?"
+You trade the cherry soda and toy truck for a strange mirror.''')
 					inventory.remove("Soda")
 					inventory.remove("Truck")
 					inventory.append("Mirror")
