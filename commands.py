@@ -5,8 +5,7 @@ import dict
 location = 0
 loca = rooms.Cafe
 inventory = ["Notepad","Boss' Note"]
-
-#scrib quest lol
+sand = False
 scrib_quest = 0
 
 #location translation ig
@@ -135,6 +134,14 @@ def talk():
 The kid continues before you have the chance to decline.
 "Cool, thanks!"''')
 					scrib_quest = 1
+				elif "Stickers" in inventory:
+					print('''You gave the stickers to the child.
+"Thanks! Here's some sand. You can throw it at people or something."
+The kid gives you a handful of sand.
+Obtained Pocket Sand.''')
+					scrib_quest = 2
+					inventory.remove("Stickers")
+					inventory.append("Pocket Sand")
 				elif scrib_quest == 1:
 					print('''"Have you gotten the stickers yet? No? Okay!"''')
 				elif scrib_quest == 2:
@@ -281,6 +288,8 @@ Obtained Pocket Sand.''')
 					scrib_quest = 2
 					inventory.remove("Stickers")
 					inventory.append("Pocket Sand")
+			else:
+				print("You can't use anything.")
 
 		#playground
 		if location == 1:
@@ -317,7 +326,7 @@ Oh, they know each other. Maybe it’s not a rivalry, after all.''')
 
 		#dungeon
 		elif location == 3:
-			sand = False
+			global sand
 			if "Pocket Sand" in inventory:
 				sand = True
 				print("You throw the sand at the skeleton's eye sockets.\nIt covers its sockets as if in pain.")
