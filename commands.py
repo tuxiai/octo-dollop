@@ -248,8 +248,8 @@ def grab():
 		loca.items.remove(x)
 
 		print(dict.gdict.get(f"{x}"))
-		print(f"Obtained {x}!")
-		print("Your current inventory:")
+		input(f"Obtained {x}!")
+		print("\nYour current inventory:")
 		inv()
 
 	else:
@@ -259,6 +259,7 @@ def grab():
 #use
 def use():
 	global inventory
+	global scrib_quest
 	#check + alter inventory
 	if inventory != ["Notepad","Boss' Note"]:
 		#cafe
@@ -269,6 +270,7 @@ def use():
 "Thanks! Here's some sand. You can throw it at people or something."
 The kid gives you a handful of sand.
 Obtained Pocket Sand.''')
+					scrib_quest = 2
 					inventory.remove("Stickers")
 					inventory.append("Pocket Sand")
 
