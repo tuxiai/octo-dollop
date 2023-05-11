@@ -60,7 +60,23 @@ def door():
 		location = x
 		print("You enter the door.")
 		locachange()
-		print(loca)
+
+		if loca.quest_status == 0:
+			if location == 1:
+				print("You're at... a playground? Would the boss' thing really be here?")
+				rooms.Playground.quest_status = 1
+			if location == 2:
+				print("...Is this a cafe? Is boss really sending you to a rival business?\nYou're staring to wonder if your boss is sending you on a wild goose chase.")
+				rooms.Stargazers.quest_status = 1
+			if location == 3:
+				print("A dungeon???? You're seriously questioning boss' sanity here.\nDo they even know where these doors lead?")
+				rooms.Dungeon.quest_status = 1
+			if location == 4:
+				print("A shop! Maybe you can find what your boss needs here.")
+				rooms.Shop.quest_status = 1
+
+		else:
+			print(loca)
 
 	#leave
 def leave():
@@ -162,22 +178,14 @@ He continues conversing with your boss.''')
 def check():
 	global location
 
-	#cafe
-	if location == 0:
-		print(f"{loca}")
+	print(f"{loca}")
 
+	#charas
+	if location == 0:
 		for i in rooms.cafecharas:
 			print(dict.cafechara.get(f"{i}"))
 
-	#other rooms
 	elif location != 0:
-		if loca.quest_status == 0:
-			if location == 1:
-				print("You're at... a playground? Would the boss' thing really be here?")
-				rooms.Playground.quest_status = 1
-		else:
-			print(f"{loca}")
-
 		for i in loca.charas:
 			print(dict.chara.get(f"{i}"))
 
