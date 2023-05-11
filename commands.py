@@ -336,7 +336,38 @@ Oh, they know each other. Maybe it’s not a rivalry, after all.''')
 
 		#shop
 		elif location == 4:
-			pass
+			if ["Shovel","Soda","Sword","Moss"] not in inventory:
+				print("No one seems to want anything you have.\nMaybe see if you can find anything else from the other doors.")
+			elif "Shovel" in inventory:
+				print("You trade the plastic shovel you found for a toy truck.")
+				inventory.remove("Shovel")
+				inventory.append("Truck")
+			elif "Soda" in inventory:
+				if "Truck" in inventory:
+					print("You trade the cherry soda and toy truck for a strange mirror.")
+					inventory.remove("Soda")
+					inventory.remove("Truck")
+					inventory.append("Mirror")
+				elif "Truck" not in inventory:
+					print('''"Hey, that soda looks pretty good!"
+"I have a magic mirror, but I don't really feel like it's worth only a soda."
+"If you can find something to sweeten the deal, I'll definitely trade with you!"''')
+			elif "Sword" in inventory:
+				if "Mirror" in inventory:
+					print('''"Whoa! That sword and mirror look super cool!"
+"Here, I'll trade you."
+You trade the sword and weird mirror for a.. mushroom? Alright then.''')
+					inventory.remove("Sword")
+					inventory.remove("Mirror")
+					inventory.append("Mushroom")
+			elif "Moss" in inventory:
+				if "Mushroom" in inventory:
+					print('''A teenager approaches you.
+"Hey, that moss and mushroom look pretty neat. I'll trade you this [] for it"
+You trade with the teenager.''')
+					inventory.remove("Moss")
+					inventory.remove("Mushroom")
+					inventory.append("Duck")
 
 	else:
 		print("You can't use anything.")
