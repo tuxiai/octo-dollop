@@ -319,8 +319,17 @@ Oh, they know each other. Maybe it’s not a rivalry, after all.''')
 				if sand:
 					print("Its terror seems amplified because of its impaired vision.")
 					dict.item_desc("Trinket")
+					inventory.append("Trinket")
 				print("The goose honks.")
 				dict.item_desc("Sword")
+
+				inventory.remove("Goose")
+				inventory.append("Sword")
+				loca.quest_status = 2
+				rooms.unlocked = 4
+			else:
+				print("You can't use anything.")
+
 
 	else:
 		print("You can't use anything.")
