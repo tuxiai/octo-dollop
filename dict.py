@@ -1,3 +1,8 @@
+#item lookup
+def item_desc(x):
+	print(dict.gdict.get(f"{x}"))
+	Obtained {x}!
+
 #displays if an item in a room
 cdict = {
 	#cafe

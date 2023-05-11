@@ -4,7 +4,10 @@ import dict
 #init vals
 location = 0
 loca = rooms.Cafe
-inventory = ["notepad","boss' note"]
+inventory = ["Notepad","Boss' Note"]
+
+#scrib quest lol
+scrib_quest = 0
 
 #location translation ig
 def locachange():
@@ -76,7 +79,9 @@ def inv():
 
 #talk
 def talk():
+	global scrib_quest
 	#check character list + progress
+
 	#only cafe has multiple characters
 	if location == 0:
 		print("To who?")
@@ -87,9 +92,35 @@ def talk():
 			if x.lower() == "boss":
 				print("Hiya. Haven't found it yet?")
 				print("Chin up. You'll find it by the end of the day. Probably.")
-			#get trade stickers for pocket sand from scrib
-			if x.lower() == "purple child"
+
+			#trade stickers for pocket sand from scrib
+			if x.lower() == "purple child":
+				if scrib_quest == 0:
+					print('''"Oh hey, it's you! Hey, I have a favor to ask. Can you find me some stickers?"
+The kid continues before you have the chance to decline.
+"Cool, thanks!"''')
+					scrib_quest = 1
+				if scrib_quest == 1:
+					print('''"Have you gotten the stickers yet? No? Okay!"''')
+				if scrib_quest == 2:
+					print('''"Hi!!"''')
+
 			#get stickers from oli
+			#maybe implement his quest if I have time
+			if x.lower() == "pink barista":
+				print('''He pauses in his conversation with your boss.
+"Oh, hello again. Did you need something?"''')
+				if scrib_quest == 1:
+					if "Stickers" not in inventory:
+						print(f'''"Stickers? Yeah, I have some. Here."
+	He reaches into his pocket and pulls out a sticker sheet.''')
+						dict.item_desc("Stickers")
+				else:
+					print('''"Nothing? Ah, okay."
+He continues conversing with your boss.''')
+
+			if x.lower() == "skeleton":
+				print("It's ignoring you.")
 
 		else:
 			print("That person isn't here.")
@@ -167,8 +198,19 @@ def grab():
 
 #use
 def use():
+	global inventory
 	#check + alter inventory
-	if inventory != ["notepad","boss' note"]:
+	if inventory != ["Notepad","Boss' Note"]:
+		#cafe
+		if location == 1:
+			if scrib_quest == 1:
+				if "Stickers" in inventory:
+					print('''You gave the stickers to the child.
+"Thanks! Here's some sand. You can throw it at people or something."
+The kid gives you a handful of sand.
+Obtained Pocket Sand.''')
+					inventory.append("Pocket Sand")
+
 		#playground
 		if location == 1:
 			if "cookie" in inventory:
