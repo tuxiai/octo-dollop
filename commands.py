@@ -150,9 +150,12 @@ He continues conversing with your boss.''')
 		#playground
 		if location == 1:
 			if loca.quest_status == 1:
-				pass
+				print('''You ask if the child can read the note from your boss.
+The child seems to pay you no mind, only mumbling to themself.
+"Man, I'm kinda hungry... But this sandcastle won't build itself! I have to stick with it!!"''')
 			if loca.quest_status == 2:
-				pass
+				if loca.charas != []:
+					print("You try to ask the child about the note, but they're too focused on their sandcastle to respond.")
 		#stargazers
 		elif location == 2:
 			if loca.quest_status == 1:
@@ -247,7 +250,7 @@ def use():
 	#check + alter inventory
 	if inventory != ["Notepad","Boss' Note"]:
 		#cafe
-		if location == 1:
+		if location == 0:
 			if scrib_quest == 1:
 				if "Stickers" in inventory:
 					print('''You gave the stickers to the child.
