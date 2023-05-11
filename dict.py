@@ -28,7 +28,8 @@ gdict = {
 	"Soda":"Looks cherry flavored.",
 	#dungeon
 	"Moss":"Are you going to eat it?",
-	"Sword":"A pretty hefty sword.",
+	"Sword":"The skeleton attempts to escape and drops its sword in the process.",
+	"Trinket":"The skeleton drops a trinket.",
 	#cafe quest items
 	"Pocket Sand":"Good to throw in the eyes of your enemies.",
 	"Stickers":"Seems like a child might enjoy these."

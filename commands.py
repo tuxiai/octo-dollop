@@ -180,9 +180,9 @@ You show him the paper your boss gave you and ask if they have any.
 		#dungeon
 		elif location == 3:
 			if loca.quest_status == 1:
-				pass
+				print('''"Why hello there, human!"''')
 			if loca.quest_status == 2:
-				pass
+				print("The skeleton ran away.")
 		#shop
 		elif location == 4:
 			if loca.quest_status == 1:
@@ -306,6 +306,30 @@ Oh, they know each other. Maybe it’s not a rivalry, after all.''')
 				rooms.unlocked = 3
 			else:
 				print("You can't use anything.")
+
+		#dungeon
+		elif location == 3:
+			sand = False
+			if "Pocket Sand" in inventory:
+				print("You throw the sand at the skeleton's eye sockets.\nIt covers its sockets as if in pain.")
+				inventory.remove("Pocket Sand")
+				sand = True
+			elif "Goose" in inventory:
+				print("You unleash the goose.\nThe skeleton shrieks in terror.")
+				if sand:
+					print("Its terror seems amplified because of its impaired vision.")
+					dict.item_desc("Trinket")
+					inventory.append("Trinket")
+				print("The goose honks.")
+				dict.item_desc("Sword")
+
+				inventory.remove("Goose")
+				inventory.append("Sword")
+				loca.quest_status = 2
+				rooms.unlocked = 4
+			else:
+				print("You can't use anything.")
+
 
 	else:
 		print("You can't use anything.")
