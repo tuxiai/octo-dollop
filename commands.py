@@ -92,11 +92,11 @@ def leave():
 	else:
 		#change character location
 		if rooms.Playground.quest_status == 2:
-			rooms.cafecharas.append("Purple Child")
+			rooms.cafecharas = ["Boss","Purple Child"]
 			rooms.Playground.charas = []
 		
 		if rooms.Stargazers.quest_status == 2:
-			rooms.cafecharas.append("Purple Child")
+			rooms.cafecharas = ["Boss","Purple Child", "Pink Barista"]
 			rooms.Stargazers.charas = []
 
 		#change player location
@@ -145,6 +145,7 @@ The kid continues before you have the chance to decline.
 						print(f'''"Stickers? Yeah, I have some. Here."
 	He reaches into his pocket and pulls out a sticker sheet.''')
 						dict.item_desc("Stickers")
+						inventory.append("Stickers")
 				else:
 					print('''"Nothing? Ah, okay."
 He continues conversing with your boss.''')
@@ -268,6 +269,7 @@ def use():
 "Thanks! Here's some sand. You can throw it at people or something."
 The kid gives you a handful of sand.
 Obtained Pocket Sand.''')
+					inventory.remove("Stickers")
 					inventory.append("Pocket Sand")
 
 		#playground
