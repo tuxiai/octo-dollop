@@ -1,5 +1,5 @@
-#*sigh*
-cafecharas = ["boss"]
+#possible chara list: boss, purple child, pink barista, skeleton
+cafecharas = ["Boss"]
 unlocked = 1
 		
 #basic room
@@ -20,16 +20,17 @@ class room():
 		return self.desc
 
 #cafe 0
-Cafe = room(["cookie"],["boss"],"The cafe you work at. It's cozy here.")
+Cafe = room(["Cookie"],["boss"],"The cafe you work at. It's cozy here.")
 
 #door 1
-Playground = room(["pocket sand"],["scrib"],"A cute little playground.")
+Playground = room(["Shovel"],["scrib"],"A cute little playground.")
 
 #door 2
-Stargazers = room(["goose"],["oli"],"A nice little cafe. It's pretty sunny.")
+Stargazers = room(["Goose"],["oli"],"A nice little cafe. It's pretty sunny.")
 
 #door 3
-Dungeon = room(["moss"],["skel"],"A relatively dark dungeon.")
+Dungeon = room(["Moss"],["skel"],"A relatively dark dungeon.")
 
 #door 4: might make new class for the trading bit
 Shop = room([],["shopkeep"],"A decently large shop.")
+	#trading items: shovel, sword, soda, moss

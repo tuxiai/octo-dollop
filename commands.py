@@ -87,6 +87,9 @@ def talk():
 			if x.lower() == "boss":
 				print("Hiya. Haven't found it yet?")
 				print("Chin up. You'll find it by the end of the day. Probably.")
+			#get trade stickers for pocket sand from scrib
+			if x.lower() == "purple child"
+			#get stickers from oli
 
 		else:
 			print("That person isn't here.")
