@@ -31,7 +31,6 @@ You find a strange paper. It reads:''')
 #command loop
 while inp not in ['q','quit'] and not goal:
 	if "Duck" in commands.inventory:
-		global goal
 		goal = True
 
 	while inp not in cmds:
