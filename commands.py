@@ -63,15 +63,19 @@ def door():
 
 		if loca.quest_status == 0:
 			if location == 1:
+			#playground
 				print("You're at... a playground? Would the boss' thing really be here?")
 				rooms.Playground.quest_status = 1
 			if location == 2:
+			#stargazers
 				print("...Is this a cafe? Is boss really sending you to a rival business?\nYou're staring to wonder if your boss is sending you on a wild goose chase.")
 				rooms.Stargazers.quest_status = 1
 			if location == 3:
+			#dungeon
 				print("A dungeon???? You're seriously questioning boss' sanity here.\nDo they even know where these doors lead?")
 				rooms.Dungeon.quest_status = 1
 			if location == 4:
+			#shop
 				print("A shop! Maybe you can find what your boss needs here.")
 				rooms.Shop.quest_status = 1
 
@@ -188,6 +192,30 @@ def check():
 	elif location != 0:
 		for i in loca.charas:
 			print(dict.chara.get(f"{i}"))
+		#other
+		#playground
+		if location == 1:
+			if rooms.Playground.charas != []:
+				print("The playground seems pretty deserted, save for that kid.")
+		#stargazers
+		if location == 2:
+			if "goose" in rooms.Stargazers.items:
+				print('''...is that a goose he's talking to?
+On second thought, the poor guy actually looks a little distressed at the presence of the goose.''')
+		#dungeon
+		if location == 3:
+			if rooms.Dungeon.charas != []:
+				print("Skeleton aside, there's a lot of things in here: moss, gold, even a treasure chest.")
+			else:
+				print("There's a lot of things in here: moss, gold, even a treasure chest.")
+		#shop
+		if location == 4:
+			x = False
+				if not x:
+					print("You see a whole host of people here. The shopkeep behind the counter looks very tired.")
+					x = True
+				if x:
+					print("After looking more closely at the people, you notice that there seems to be some sort of trading circle going on.")
 
 	#items
 	for i in loca.items:
