@@ -208,6 +208,10 @@ def check():
 
 	#charas
 	if location == 0:
+		if rooms.unlocked == 1:
+			print("You see four doors. 1 seems to be unlocked.")
+		elif rooms.unlocked != 1:
+			print(f"You see four doors. {rooms.unlocked} seem to be unlocked.")
 		for i in rooms.cafecharas:
 			print(dict.cafechara.get(f"{i.lower()}"))
 
