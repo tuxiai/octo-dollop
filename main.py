@@ -93,5 +93,5 @@ They pat you on the back.
 "Go ahead and leave for the day. I can take care of the cafe."
 ''')
 	print('''"Oh, and take a snack for the road." They slide a plate of cookies in your direction.
-You take a snack and clock out.
+You take some and clock out.
 Nice job! Now go get a snack in real life--and maybe drink some water too.''')
