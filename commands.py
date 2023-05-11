@@ -231,7 +231,7 @@ def check():
 		elif location == 4:
 			x = False
 			if not x:
-				print("You see a whole host of people here. The shopkeep behind the counter looks very tired.")
+				print("You see a whole host of people here.")
 				x = True
 			if x:
 				print("After looking more closely at the people, you notice that there seems to be some sort of trading circle going on.")
