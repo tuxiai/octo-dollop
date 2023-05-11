@@ -20,7 +20,12 @@ class room():
 		return self.desc
 
 #cafe 0
-Cafe = room(["Cookie"],["boss"],"The cafe you work at. It's cozy here.")
+#changing str
+if unlocked == 1:
+	x = "You see four doors. 1 seems to be unlocked."
+elif unlocked != 1:
+	x = f"You see four doors. {unlocked} seem to be unlocked."
+Cafe = room(["Cookie"],["boss"],f"The cafe you work at. It's cozy here.\n{x}")
 
 #door 1
 Playground = room(["Shovel"],["scrib"],"A cute little playground.")
