@@ -1,5 +1,6 @@
 import rooms
 import dict
+import pickle
 
 #init vals
 location = 0
@@ -388,8 +389,17 @@ You trade with the teenager.''')
 
 #save
 def save():
-	pass
+	with open ("save.dat","wb") as f:
+		pickle.dump(inventory,f)
+		f.close()
 
 #load
 def load():
-	pass
+	global inventory
+	try:
+		with open("save.dat","rb") as f:
+			inventory = pickle.load(f)
+			f.close()
+
+	except FileNotFoundError:
+		print("No save found.")
