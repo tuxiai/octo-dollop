@@ -191,7 +191,7 @@ def check():
 
 	elif location != 0:
 		for i in loca.charas:
-			print(dict.chara.get(f"{i.lower}"))
+			print(dict.chara.get(f"{i.lower()}"))
 		#other
 		#playground
 		if location == 1:
@@ -264,7 +264,6 @@ Obtained Pocket Sand.''')
 		elif location == 2:
 			if "money" in inventory:
 				pass
-
 
 	else:
 		print("You can't use anything.")
