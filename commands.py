@@ -69,7 +69,7 @@ def door():
 					rooms.Playground.quest_status = 1
 				if location == 2:
 				#stargazers
-					print("...Is this a cafe? Is boss really sending you to a rival business?\nYou're staring to wonder if your boss is sending you on a wild goose chase.")
+					print("...Is this a cafe? Is boss really sending you to a rival business?\nYou're starting to wonder if your boss is sending you on a wild goose chase.")
 					rooms.Stargazers.quest_status = 1
 				if location == 3:
 				#dungeon
@@ -93,7 +93,11 @@ def leave():
 		#change character location
 		if rooms.Playground.quest_status == 2:
 			rooms.cafecharas.append("Purple Child")
-			rooms.Playground.charas.remove(rooms.Playground.charas[0])
+			rooms.Playground.charas = []
+		
+		if rooms.Stargazers.quest_status == 2:
+			rooms.cafecharas.append("Purple Child")
+			rooms.Stargazers.charas = []
 
 		#change player location
 		print("You're back in the cafe.")
@@ -165,9 +169,13 @@ The child seems to pay you no mind, only mumbling to themself.
 		#stargazers
 		elif location == 2:
 			if loca.quest_status == 1:
-				pass
+				print('''You sidestep the goose and walk up to the counter.
+“Hello! Welcome to Stargazer Cafe! What can I get for you?”
+You show him the paper your boss gave you and ask if they have any.
+“Um, sorry. We don’t sell that here. We have plenty of beverages and pastries for you to choose from, though!”
+''')
 			if loca.quest_status == 2:
-				pass
+				print('''"Enjoy your soda!''')
 		#dungeon
 		elif location == 3:
 			if loca.quest_status == 1:
@@ -207,10 +215,7 @@ def check():
 			if rooms.Playground.charas != []:
 				print("The playground seems pretty deserted, save for that kid.")
 		#stargazers
-		elif location == 2:
-			if "goose" in rooms.Stargazers.items:
-				print('''...is that a goose he's talking to?
-On second thought, the poor guy actually looks a little distressed at the presence of the goose.''')
+
 		#dungeon
 		elif location == 3:
 			if rooms.Dungeon.charas != []:
@@ -276,14 +281,25 @@ Obtained Pocket Sand.''')
 				dict.item_desc("Money")
 				print("The child immediately goes back to making their sandcastle.")
 
+				inventory.remove("Cookie")
+				inventory.append("Money")
 				loca.quest_status = 2
+				rooms.unlocked = 2
 			else:
 				print("You can't use anything.")
 
 		#stargazers
 		elif location == 2:
 			if "Money" in inventory:
-				pass
+				print('''After careful consideration, you decide to buy a soda.
+“Have a nice day! Give your boss my regards.”
+Oh, they know each other. Maybe it’s not a rivalry, after all.''')
+				dict.item_desc("Soda")
+
+				inventory.remove("Money")
+				inventory.append("Soda")
+				loca.quest_status = 2
+				rooms.unlocked = 3
 			else:
 				print("You can't use anything.")
 

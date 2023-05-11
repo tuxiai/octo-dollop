@@ -10,7 +10,7 @@ cdict = {
 	#playground
 	"Shovel":"There's an abandoned plastic shovel in the sandbox.",
 	#stargazers
-	"Goose":"That goose is honking up a storm.",
+	"Goose":"...is that a goose he's talking to?\nOn second thought, the poor guy actually looks a little distressed at the presence of the goose.",
 	#dungeon
 	"Moss":"There's some moss in the corner."
 	}
