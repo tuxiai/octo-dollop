@@ -190,10 +190,10 @@ You show him the paper your boss gave you and ask if they have any.
 		#shop
 		elif location == 4:
 			if loca.quest_status == 1:
-				pass
-			if loca.quest_status == 2:
-				pass
-
+				print('''You ask the shopkeeper if they have any of whatever is on this note.
+She glances at the note.
+"Sorry, we're all out of stock."
+man.''')
 
 	else:
 		print("Nobody's here.")
