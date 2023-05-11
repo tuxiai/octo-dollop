@@ -40,7 +40,7 @@ chara = {
 	"scrib":"There's a child in purple playing in the sandbox.",
 	"oli":"You see a guy in a pink apron at the counter.",
 	"skel":"There's an armored skeleton. Oh. It's alive.\nYou note that it has a sword, too.",
-	"shopkeep":"The shopkeeper looks so tired."
+	"shopkeep":"The shopkeeper looks so very tired."
 	}
 
 cafechara = {
