@@ -334,6 +334,9 @@ Oh, they know each other. Maybe it’s not a rivalry, after all.''')
 			else:
 				print("You can't use anything.")
 
+		#shop
+		elif location == 4:
+			pass
 
 	else:
 		print("You can't use anything.")
