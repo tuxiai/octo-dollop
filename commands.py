@@ -161,14 +161,23 @@ He continues conversing with your boss.''')
 	#check + display item list but with words
 def check():
 	global location
-	print(f"{loca}")
 
-	#characters
+	#cafe
 	if location == 0:
+		print(f"{loca}")
+
 		for i in rooms.cafecharas:
 			print(dict.cafechara.get(f"{i}"))
 
+	#other rooms
 	elif location != 0:
+		if loca.quest_status == 0:
+			if location == 1:
+				print("You're at... a playground? Would the boss' thing really be here?")
+				rooms.Playground.quest_status = 1
+		else:
+			print(f"{loca}")
+
 		for i in loca.charas:
 			print(dict.chara.get(f"{i}"))
 
