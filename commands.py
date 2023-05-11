@@ -99,6 +99,10 @@ def leave():
 			rooms.cafecharas = ["Boss","Purple Child", "Pink Barista"]
 			rooms.Stargazers.charas = []
 
+		if rooms.Dungeon.quest_status == 2:
+			rooms.cafecharas = ["Boss","Purple Child", "Pink Barista", "Skeleton"]
+			rooms.Dungeon.charas = []
+
 		#change player location
 		print("You're back in the cafe.")
 		location = 0
@@ -311,9 +315,9 @@ Oh, they know each other. Maybe it’s not a rivalry, after all.''')
 		elif location == 3:
 			sand = False
 			if "Pocket Sand" in inventory:
+				sand = True
 				print("You throw the sand at the skeleton's eye sockets.\nIt covers its sockets as if in pain.")
 				inventory.remove("Pocket Sand")
-				sand = True
 			elif "Goose" in inventory:
 				print("You unleash the goose.\nThe skeleton shrieks in terror.")
 				if sand:
