@@ -207,10 +207,7 @@ def check():
 			if rooms.Playground.charas != []:
 				print("The playground seems pretty deserted, save for that kid.")
 		#stargazers
-		elif location == 2:
-			if "goose" in rooms.Stargazers.items:
-				print('''...is that a goose he's talking to?
-On second thought, the poor guy actually looks a little distressed at the presence of the goose.''')
+
 		#dungeon
 		elif location == 3:
 			if rooms.Dungeon.charas != []:
@@ -277,6 +274,7 @@ Obtained Pocket Sand.''')
 				print("The child immediately goes back to making their sandcastle.")
 
 				loca.quest_status = 2
+				rooms.unlocked = 2
 			else:
 				print("You can't use anything.")
 
