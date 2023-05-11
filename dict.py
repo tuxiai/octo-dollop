@@ -1,6 +1,6 @@
 #item lookup
 def item_desc(x):
-	print(dict.gdict.get(f"{x}"))
+	print(gdict.get(f"{x}"))
 	print(f"Obtained {x}!")
 
 #displays if an item in a room
@@ -22,7 +22,7 @@ gdict = {
 	"Cookie":"A delicious treat!",
 	#playground
 	"Shovel":"A little plastic shovel.",
-	"Money":"Some crumpled up bills.",
+	"Money":"The child hands you some crumpled up bills.",
 	#stargazers
 	"Goose":f"You grabbed the goose. It starts honking aggressively, but otherwise does nothing.\nApron guy looks a little awestruck.\n\"Oh, thanks for dealing with that. I didn't know what to do.\"",
 	"Soda":"Looks cherry flavored.",

@@ -51,36 +51,38 @@ P.S. Press enter to advance text!
 	#door x
 def door():
 	global location
-	x = int(input("Which door number?\n"))
-	if x not in range(0,5):
-		print("That door doesn't exist.")
-	elif x > rooms.unlocked:
-		print("That door is locked.")
-	else:
-		location = x
-		print("You enter the door.")
-		locachange()
-
-		if loca.quest_status == 0:
-			if location == 1:
-			#playground
-				print("You're at... a playground? Would the boss' thing really be here?")
-				rooms.Playground.quest_status = 1
-			if location == 2:
-			#stargazers
-				print("...Is this a cafe? Is boss really sending you to a rival business?\nYou're staring to wonder if your boss is sending you on a wild goose chase.")
-				rooms.Stargazers.quest_status = 1
-			if location == 3:
-			#dungeon
-				print("A dungeon???? You're seriously questioning boss' sanity here.\nDo they even know where these doors lead?")
-				rooms.Dungeon.quest_status = 1
-			if location == 4:
-			#shop
-				print("A shop! Maybe you can find what your boss needs here.")
-				rooms.Shop.quest_status = 1
-
+	try:
+		x = int(input("Which door number?\n"))
+		if x not in range(0,5):
+			print("That door doesn't exist.")
+		elif x > rooms.unlocked:
+			print("That door is locked.")
 		else:
-			print(loca)
+			location = x
+			print("You enter the door.")
+			locachange()
+
+			if loca.quest_status == 0:
+				if location == 1:
+				#playground
+					print("You're at... a playground? Would the boss' thing really be here?")
+					rooms.Playground.quest_status = 1
+				if location == 2:
+				#stargazers
+					print("...Is this a cafe? Is boss really sending you to a rival business?\nYou're staring to wonder if your boss is sending you on a wild goose chase.")
+					rooms.Stargazers.quest_status = 1
+				if location == 3:
+				#dungeon
+					print("A dungeon???? You're seriously questioning boss' sanity here.\nDo they even know where these doors lead?")
+					rooms.Dungeon.quest_status = 1
+				if location == 4:
+				#shop
+					print("A shop! Maybe you can find what your boss needs here.")
+					rooms.Shop.quest_status = 1
+			else:
+				print(loca)
+	except ValueError:
+		print("That's not a number.")
 
 	#leave
 def leave():
@@ -88,6 +90,12 @@ def leave():
 	if location == 0:
 		print("You're still on shift. You can't leave.")
 	else:
+		#change character location
+		if rooms.Playground.quest_status == 2:
+			rooms.cafecharas.append("Purple Child")
+			rooms.Playground.charas.remove(rooms.Playground.charas[0])
+
+		#change player location
 		print("You're back in the cafe.")
 		location = 0
 		locachange()
@@ -99,34 +107,32 @@ def inv():
 
 #talk
 def talk():
-	global scrib_quest
 	#check character list + progress
-
 	#only cafe has multiple characters
 	if location == 0:
 		print("To who?")
-		for i in loca.charas:
+		for i in rooms.cafecharas:
 			print(f"-{i}")
 		x = input()
-		if x in loca.charas:
+		if x.title() in rooms.cafecharas:
 			if x.lower() == "boss":
-				print("Hiya. Haven't found it yet?")
-				print("Chin up. You'll find it by the end of the day. Probably.")
+				print('''"Hiya. Haven't found it yet?"
+"Chin up. You'll find it by the end of the day. Probably."''')
 
 			#trade stickers for pocket sand from scrib
+			global scrib_quest
 			if x.lower() == "purple child":
 				if scrib_quest == 0:
 					print('''"Oh hey, it's you! Hey, I have a favor to ask. Can you find me some stickers?"
 The kid continues before you have the chance to decline.
 "Cool, thanks!"''')
 					scrib_quest = 1
-				if scrib_quest == 1:
+				elif scrib_quest == 1:
 					print('''"Have you gotten the stickers yet? No? Okay!"''')
-				if scrib_quest == 2:
+				elif scrib_quest == 2:
 					print('''"Hi!!"''')
 
 			#get stickers from oli
-			#maybe implement his quest if I have time
 			if x.lower() == "pink barista":
 				print('''He pauses in his conversation with your boss.
 "Oh, hello again. Did you need something?"''')
@@ -261,12 +267,25 @@ Obtained Pocket Sand.''')
 
 		#playground
 		if location == 1:
-			if "cookie" in inventory:
-				pass
+			if "Cookie" in inventory:
+				input('''You gave the child a cookie. They look at you in wonder.
+"Whoa, thanks!"
+"Wait, I didn't pay for this..."''')
+				print('''The child starts patting their pockets.
+"Aha! Here's some money for the cookie!''')
+				dict.item_desc("Money")
+				print("The child immediately goes back to making their sandcastle.")
+
+				loca.quest_status = 2
+			else:
+				print("You can't use anything.")
+
 		#stargazers
 		elif location == 2:
-			if "money" in inventory:
+			if "Money" in inventory:
 				pass
+			else:
+				print("You can't use anything.")
 
 	else:
 		print("You can't use anything.")
