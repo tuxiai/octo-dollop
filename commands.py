@@ -391,15 +391,47 @@ You trade with the teenager.''')
 def save():
 	with open ("save.dat","wb") as f:
 		pickle.dump(inventory,f)
+		pickle.dump(location,f)
+		pickle.dump(sand,f)
+		pickle.dump(scrib_quest,f)
+
+		pickle.dump(rooms.cafecharas,f)
+		pickle.dump(rooms.unlocked,f)
+
+		pickle.dump(rooms.Cafe,f)
+		pickle.dump(rooms.Playground,f)
+		pickle.dump(rooms.Stargazers,f)
+		pickle.dump(rooms.Dungeon,f)
+		pickle.dump(rooms.Shop,f)
+
 		f.close()
+	print("Game saved.")
 
 #load
 def load():
 	global inventory
+	global location
+	global sand
+	global scrib_quest
+
 	try:
 		with open("save.dat","rb") as f:
 			inventory = pickle.load(f)
+			location  = pickle.load(f)
+			sand  = pickle.load(f)
+			scrib_quest  = pickle.load(f)
+
+			rooms.cafecharas = pickle.load(f)
+			rooms.unlocked  = pickle.load(f)
+
+			rooms.Cafe = pickle.load(f)
+			rooms.Playground = pickle.load(f)
+			rooms.Stargazers = pickle.load(f)
+			rooms.Dungeon = pickle.load(f)
+			rooms.Shop = pickle.load(f)
+
 			f.close()
+		print("Save loaded.")
 
 	except FileNotFoundError:
 		print("No save found.")
